@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<nav>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
 <html>
   <head>
+<link rel="icon" type="logo/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,7 +12,8 @@
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-}
+     }
+     <button onclick="toggleTheme()">🌙 Dark Mode</button>
       .container{
 
     border-top:
@@ -34,12 +31,13 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border: 3px solid #e5e7eb;
+.logo {
+    width: 200px;
+    height: 200px;
+    background-image: url("images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
@@ -79,7 +77,23 @@ button:hover {
   background-color: #1e40af;
   transform: scale(1.05);
 }
+.btn{
+  display:inline-block;
+  background:#2563eb;
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  box-shadow:0 5px 15px rgba(37,99,235,.25);
+  transition:0.3s;
+}
 
+.btn:hover{
+  background:#1e40af;
+  transform:scale(1.05);
+}
 .section {
   background: #f9fafb;
   padding: 18px;
@@ -95,9 +109,34 @@ button:hover {
   border-radius: 6px;
   border: 1px solid #e5e7eb;
 }
+      .section{
+
+animation:fade .8s ease;
+
+}
+      @keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
       .section h2 {
   margin-bottom: 10px;
 }
+      
       .role {
   color: #2563eb;
   font-weight: bold;
@@ -121,6 +160,13 @@ button:hover {
   button {
     width: 100%;
   }
+        button{
+    cursor:pointer;
+}
+        button{
+    border:none;
+    outline:none;
+}
 }
       html{
     scroll-behavior:smooth;
@@ -143,15 +189,69 @@ nav a{
 nav a:hover{
     color:#2563eb;
 }
+      nav{
+    position:sticky;
+    top:0;
+
+    background:white;
+
+    z-index:1000;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+      .footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin: 8px 0;
+}
+
+.footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+    .footer {
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+      .dark {
+    background: #111827;
+    color: white;
+}
+
+.dark .container {
+    background: #1f2937;
+}
     </style>
     <title>MY FIRST WEBSITE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
   <div class="container">
 
-  <img src="https://picsum.photos/200" alt="Profile Image">
-
+<img src="logo.png" alt="Freelancing Business Logo" width="200">
+    
   <h1>Williams Aniedebe</h1>
 
 <p class="role">Frontend Web Developer</p>
@@ -160,12 +260,22 @@ nav a:hover{
 I help small businesses and individuals get professional websites that attract customers and build trust online.
 </p>
 
-<button>Get a Free Quote</button>
+<a href="mailto:aniedebwilliams@email.com"
 
-    <hr>
+   class="btn"
+
+   target="_blank">
+
+
+
+Get a Free Quote
+
+
+
+</a>
 
     <!-- SERVICES SECTION -->
-   <div class="section">
+  <div class="section" id="services">
   <h2>What I Can Do For You</h2>
 
   <p><b>Business Website</b> – I create websites that make your business look professional online.</p>
@@ -174,7 +284,7 @@ I help small businesses and individuals get professional websites that attract c
 
   <p><b>Portfolio Website</b> – Personal websites for freelancers and professionals.</p>
 </div>
-  <div class="section">
+ <div class="section" id="services">
   <h2>Pricing</h2>
 
   <p><b>Basic Website</b> – $20<br>
@@ -187,10 +297,8 @@ I help small businesses and individuals get professional websites that attract c
   Full professional website with custom design</p>
 </div>
 
-    <hr>
-
     <!-- PROJECTS SECTION -->
-    <div class="section">
+    <div class="section" id="projects">
   <h2>My Projects</h2>
 
   <p><b>Business Landing Page</b><br>
@@ -203,8 +311,8 @@ I help small businesses and individuals get professional websites that attract c
   A basic JavaScript project for calculations.</p>
 </div>
 
-    <hr>
-    <div class="section">
+
+<div class="section" id="projects">
   <h2>Why Work With Me</h2>
 
   <p>✔ Clean and modern designs</p>
@@ -212,7 +320,7 @@ I help small businesses and individuals get professional websites that attract c
   <p>✔ Mobile-friendly websites</p>
   <p>✔ Easy communication</p>
 </div>
-    <div class="section">
+    <div class="section" id="projects">
   <h2>What Clients Say</h2>
 
   <p>"Very fast and professional work." – Small Business Owner</p>
@@ -220,17 +328,40 @@ I help small businesses and individuals get professional websites that attract c
 </div>
 
     <!-- CONTACT SECTION -->
-   <div class="section">
+<div class="section" id="contact">
   <h2>Let’s Work Together</h2>
 
   <p>If you need a website for your business, I can build it for you quickly and professionally.</p>
-
-  <p><b>Email:</b> aniedebwilliams@email.com</p>
+ <p><b>Email:</b> aniedebwilliams@gmail.com</p>
 
   <p><b>WhatsApp:</b> +234 903 792 3591</p>
 
-  <button>Message Me Now</button>
+  <a href="https://wa.me/2349037923591" target="_blank" class="btn">
+  Message Me Now
+</a>
 </div>
     </div><!-- closes container -->
+    <footer class="footer">
+    <div class="footer-content">
+        <h3>Freelance Solutions</h3>
+
+        <p>Helping businesses grow with professional freelance services.</p>
+
+        <p>Email: aniedebewilliams@gmail.com</p>
+
+        <p>
+            <a href="#projects">Home</a> |
+            <a href="#services">Services</a> |
+            <a href="#contact">Contact</a>
+        </p>
+
+        <footer class="footer">
+    <p>&copy; 2026 Freelance Solutions. All rights reserved.</p>
+</footer>
+    </div>
+</footer>
+    <script>
+    alert("Welcome to my portfolio!");
+</script>
   </body>
 </html>
